@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Geo Stats",
+  "version": "1.0",
+  "permissions": [
+    "webRequest"
+  ],
+  "action": {
+    "default_popup": "index.html"
+  },
+  "host_permissions": [
+    "https://www.geoguessr.com/*",
+    "https://game-server.geoguessr.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.geoguessr.com/*"
+      ],
+      "js": [
+        "content_script.js"
+      ]
+    }
+  ]
+}
